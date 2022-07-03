@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+
+.header, .footer {
+    color: white;
+    background-color: #aa8d0a;
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+    align-items: center;
+    height: 10vh;
+}
+
+.header img {
+    height: auto;
+    width: 4rem;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-content {
+    display: flex;
+    /* background: url(./krusty-krab.webp); */
+    height: 90vh;
+}
+
+.footer {
+
+    justify-content: center;
+}
+
