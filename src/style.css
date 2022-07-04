@@ -1,13 +1,24 @@
+/* @font-face {
+    font-family: SpongeFont;
+    src: url(./SpongeboyRegular-gx2n6.otf);
+} */
+
 body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
+    min-height: 100vh;
+    font-family: sans-serif;
 
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #aa8d0a;
+    background: url(./krusty-krab.webp);
+    background-repeat: no-repeat; 
+    /* font-family: SpongeFont; */
 
 }
+
+
 
 .header, .footer {
     color: white;
@@ -16,7 +27,9 @@ body {
     justify-content: space-between;
     padding: 32px;
     align-items: center;
-    height: 10vh;
+    margin: 0;
+
+
 }
 
 .header img {
@@ -32,15 +45,34 @@ ul {
     gap: 8px;
 }
 
-a {
+.header button {
+    background-color:#aa8d0a;
+    border: none;
     text-decoration: none;
     color: #fff;
+}
+
+.header button:hover {
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 .main-content {
     display: flex;
     /* background: url(./krusty-krab.webp); */
-    height: 90vh;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    color: #fff;
+    height: 200px;
+    width: auto;
+}
+
+.main-content img {
+   
 }
 
 .footer {
