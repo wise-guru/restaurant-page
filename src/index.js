@@ -34,6 +34,10 @@ function createHeader() {
     myIcon.src = Icon;
     header.appendChild(myIcon)
 
+    const title = document.createElement('div')
+    title.textContent = "The Krusty Krab"
+    header.appendChild(title)
+
     const headerLinks = document.createElement('ul');
     headerLinks.classList.add('header-links');
     header.appendChild(headerLinks);
@@ -41,27 +45,24 @@ function createHeader() {
         const menu = document.createElement('li')
         headerLinks.appendChild(menu)
 
-            const menuLink = document.createElement('a')
+            const menuLink = document.createElement('button')
             menu.appendChild(menuLink)
-            menuLink.href = ""
             menuLink.textContent = 'Menu'
 
 
         const about = document.createElement('li')
         headerLinks.appendChild(about)
 
-            const aboutLink = document.createElement('a')
+            const aboutLink = document.createElement('button')
             about.appendChild(aboutLink)
-            aboutLink.href = ""
             aboutLink.textContent = 'About'
 
 
         const location = document.createElement('li')
         headerLinks.appendChild(location)
 
-            const locationLink = document.createElement('a')
+            const locationLink = document.createElement('button')
             location.appendChild(locationLink)
-            locationLink.href = ""
             locationLink.textContent = 'Location'
 }
  
@@ -72,6 +73,28 @@ function createMainContent() {
     const mainContent = document.createElement('div')
     mainContent.classList.add('main-content')
     document.body.appendChild(mainContent)
+
+        // const krustyKrabImg = new Image();
+        // krustyKrabImg.src = Background;
+        // mainContent.appendChild(krustyKrabImg);
+
+        const homepageMsg = document.createElement('div')
+        homepageMsg.classList.add('mainMessage')
+        mainContent.appendChild(homepageMsg)
+
+            const welcomeTitle = document.createElement('p')
+            welcomeTitle.textContent = "Welcome to the Krusty Krab!"
+            homepageMsg.appendChild(welcomeTitle)
+
+            // const spongePic = new Image()
+            // spongePic.src = Spongebob;
+            // homepageMsg.appendChild(spongePic)
+
+
+            const welcomeMsg = document.createElement('p')
+            welcomeMsg.textContent = "Testing, testing"
+            homepageMsg.appendChild(welcomeMsg)
+
     
 }
 
@@ -81,9 +104,13 @@ createMainContent();
 function createFooter() {
     const footer = document.createElement('div')
     footer.classList.add('footer')
-    footer.textContent = 'Copyright © Krusty Krab 2022'
+    footer.textContent = 'Copyright © Krusty Krab'
     document.body.appendChild(footer)
 
 }
 
 createFooter();
+
+// function aboutPage() {
+    
+// }
