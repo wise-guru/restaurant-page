@@ -9,7 +9,7 @@ function showContact() {
         contactContent.appendChild(contactTitle)
 
         const contactImg = new Image()
-        contactImg = Patrick
+        contactImg.src = Patrick
         contactContent.appendChild(contactImg)
 
         const contactNum = document.createElement('div')

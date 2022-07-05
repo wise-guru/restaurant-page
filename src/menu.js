@@ -7,8 +7,8 @@ import Kchocolate from './img/chocolate.jpg'
 
 function showMenu() {
     const menuContent = document.createElement('div')
-    menuContent.classList.add('main-content') 
-    document.body.appendChild(menuContent)
+    menuContent.classList.add('main-content', 'menu') 
+   
 
     const menuTitle = document.createElement('div')
     menuTitle.textContent = "Menu"
@@ -16,7 +16,7 @@ function showMenu() {
 
     const menuCards = document.createElement('div')
     menuCards.classList.add('menu-cards')
-    
+    menuContent.appendChild(menuCards)
 
     const krabbyPatty = document.createElement('div')
     krabbyPatty.classList.add('card')
@@ -26,14 +26,15 @@ function showMenu() {
         krabbyPattyTitle.textContent = "Krabby Patty"
 
         const krabbyPattyPrice = document.createElement('div')
-        fries.appendChild(krabbyPattyPrice)
+        krabbyPattyPrice.textContent = "$5.99"
+        krabbyPatty.appendChild(krabbyPattyPrice)
 
         const krabbyPattyImg = new Image()
         krabbyPattyImg.src = Kpatty
-        fries.appendChild(krabbyPattyImg)
+        krabbyPatty.appendChild(krabbyPattyImg)
         
         const krabbyPattyText = document.createElement('div')
-        krabbyPatty.textContent = "You like krabby patties, don't you squidward?"
+        krabbyPattyText.textContent = "You like krabby patties, don't you squidward?"
         krabbyPatty.appendChild(krabbyPattyText)
 
     const fries = document.createElement('div')
@@ -44,6 +45,7 @@ function showMenu() {
         friesTitle.textContent 
 
         const friesPrice = document.createElement('div')
+        friesPrice.textContent = "$2.99"
         fries.appendChild(friesPrice)
 
         const friesImg = new Image()
@@ -62,6 +64,7 @@ function showMenu() {
         kelpShakeTtitle.textContent = "Kelp Shake"
 
         const kelpShakePrice = document.createElement('div')
+        kelpShakePrice.textContent = "$2"
         kelpShake.appendChild(kelpShakePrice)
 
         const kelpShakeImg = new Image()
@@ -77,7 +80,7 @@ function showMenu() {
     menuCards.appendChild(prettyPatty)
         const prettyPattyTitle = document.createElement('div')
         prettyPatty.appendChild(prettyPattyTitle)
-        prettyPattyTitle.textContent = "Lorem ipsum"
+        prettyPattyTitle.textContent = "Pretty Patty"
 
         const prettyPattyPrice = document.createElement('div')
         prettyPatty.appendChild(prettyPattyPrice)
@@ -94,15 +97,16 @@ function showMenu() {
     pizza.classList.add('card')
     menuCards.appendChild(pizza)
         const pizzaTitle = document.createElement('div')
-        pizza.appendChild(pizzaTitle)
         pizzaTitle.textContent = "Krusty Krab Pizza"
+        pizza.appendChild(pizzaTitle)
 
         const pizzaPrice = document.createElement('div')
+        pizzaPrice.textContent = "$9.99"
         pizza.appendChild(pizzaPrice)
 
         const pizzaImg = new Image()
         pizzaImg.src = Kpizza
-        pizzaImg.appendChild(pizza``)
+        pizza.appendChild(pizzaImg)
         
         const pizzaText = document.createElement('div')
         pizzaText.textContent = "Krusty Krab Pizza, is the pizza..."
@@ -120,12 +124,13 @@ function showMenu() {
 
         const chocolateImg = new Image()
         chocolateImg.src = Kchocolate
-        chocolateImg.appendChild(chocolateImg)
+        chocolate.appendChild(chocolateImg)
         
         const chocolateText = document.createElement('div')
-        chocolate.textContent = "Delicious chocolate bar."
+        chocolateText.textContent = "Delicious chocolate bar."
         chocolate.appendChild(chocolateText)
-
+    
+    return menuContent;
 }
 
 function loadMenu() {

@@ -14,22 +14,32 @@ function createHeader() {
     header.classList.add('header')
     
 
-    const myIcon = new Image();
-    myIcon.src = Icon;
-    header.appendChild(myIcon)
+    const homeBtn = document.createElement('input')
+    homeBtn.type = 'image'
+    homeBtn.src = Icon;
+    homeBtn.classList.add('header-buttons')
+    header.appendChild(homeBtn)
+
+    homeBtn.addEventListener('click', function(e) {
+        if (e.target.classList.contains("active")) {
+            setActiveButton(homeBtn)
+            loadHome();
+        }
+    })
+        
 
     const title = document.createElement('div')
     title.textContent = "The Krusty Krab"
     header.appendChild(title)
 
     const headerButtons = document.createElement('ul');
-    headerButtons.classList.add('header-buttons');
     header.appendChild(headerButtons);
         
         const menu = document.createElement('li')
         headerButtons.appendChild(menu)
 
             const menuBtn = document.createElement('button')
+            menuBtn.classList.add('header-buttons');
             menu.appendChild(menuBtn)
             menuBtn.textContent = 'Menu'
 
@@ -46,12 +56,13 @@ function createHeader() {
         headerButtons.appendChild(about)
 
             const aboutBtn = document.createElement('button')
+            aboutBtn.classList.add('header-buttons');
             about.appendChild(aboutBtn)
             aboutBtn.textContent = 'About'
 
             aboutBtn.addEventListener('click', function(e) {
                 if (e.target.classList.contains("active")) {
-                    setActiveButton(menuBtn)
+                    setActiveButton(aboutBtn)
                     loadAbout();
                 }
             })
@@ -61,12 +72,13 @@ function createHeader() {
         headerButtons.appendChild(contact)
 
             const contactBtn = document.createElement('button')
+            contactBtn.classList.add('header-buttons');
             contact.appendChild(contactBtn)
             contactBtn.textContent = 'Contact'
 
             contactBtn.addEventListener('click', function(e) {
                 if (e.target.classList.contains("active")) {
-                    setActiveButton(menuBtn)
+                    setActiveButton(contactBtn)
                     loadContact();
                 }
             })
@@ -75,7 +87,7 @@ function createHeader() {
  
 
 function createMain() {
-    const main = document.createElement('main')
+    const main = document.createElement('div')
     main.classList.add('main')
     main.id = 'main'
 
@@ -98,8 +110,8 @@ function setActiveButton(button) {
         if(button !== this) {
             button.classList.remove("active");
         }
+        button.classList.add("active")
     });
-    button.classList.add("active")
 }
 
 function initializeWebsite() {

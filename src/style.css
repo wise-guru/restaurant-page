@@ -32,9 +32,17 @@ body, #container {
 
 }
 
-.header img {
+.header input {
     height: auto;
     width: 4rem;
+}
+
+.header input:hover {
+    transform: scale(1.025);
+}
+
+.header input:active {
+    transform: scale(0.975);
 }
 
 ul {
@@ -57,8 +65,12 @@ ul {
     cursor: pointer;
 }
 
+#main {
+    display: grid;
+}
+
 .main-content {
-    display: flex;
+    display: grid;
     /* background: url(./krusty-krab.webp); */
     justify-content: center;
     align-content: center;
@@ -67,16 +79,33 @@ ul {
     background-color: rgba(0, 0, 0, 0.7);
     font-weight: 600;
     color: #fff;
-    height: 200px;
     width: auto;
-}
-
-.main-content img {
-   
 }
 
 .footer {
 
     justify-content: center;
+}
+
+.menu-cards img {
+    height: auto;
+    width: 150px;
+}
+
+.menu-cards {
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));;
+    /* grid-template-rows: repeat(2, 1fr); */
+    gap: 15px;
+    margin: 15px;
+}
+
+.card {
+    display: grid;
+    background-color: #fff;
+    height: 200px;
+    align-items: end;
+    border-left: solid 8px #0f1c51;
 }
 
