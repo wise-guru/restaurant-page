@@ -3,31 +3,15 @@ import './style.css';
 import Background from './krusty-krab.webp';
 import Icon from './krabby-patty-icon.webp';
 
-// function component() {
-//     const element = document.createElement('div');
- 
-//     // Lodash, now imported by this script
-//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-//     element.classList.add('hello');
+import loadMenu from './menu';
+import loadContact from "./contact";
+import loadAbout from "./about";
+import loadHome from "./home";
 
-//     const myBackground = new Image();
-// myBackground.src = Background
-// element.appendChild(myBackground)
-
-//     return element;
-
-// }
-
-// const content = document.createElement('div')
-// content.id = 'content'
-// document.body.appendChild(content)
-
-console.log('Hello world')
 
 function createHeader() {
     const header = document.createElement('div')
     header.classList.add('header')
-    document.body.appendChild(header)
     
 
     const myIcon = new Image();
@@ -38,79 +22,97 @@ function createHeader() {
     title.textContent = "The Krusty Krab"
     header.appendChild(title)
 
-    const headerLinks = document.createElement('ul');
-    headerLinks.classList.add('header-links');
-    header.appendChild(headerLinks);
+    const headerButtons = document.createElement('ul');
+    headerButtons.classList.add('header-buttons');
+    header.appendChild(headerButtons);
         
         const menu = document.createElement('li')
-        headerLinks.appendChild(menu)
+        headerButtons.appendChild(menu)
 
-            const menuLink = document.createElement('button')
-            menu.appendChild(menuLink)
-            menuLink.textContent = 'Menu'
+            const menuBtn = document.createElement('button')
+            menu.appendChild(menuBtn)
+            menuBtn.textContent = 'Menu'
+
+            menuBtn.addEventListener('click', function(e) {
+                if (e.target.classList.contains("active")) {
+                    setActiveButton(menuBtn)
+                    loadMenu();
+                }
+                
+            })
 
 
         const about = document.createElement('li')
-        headerLinks.appendChild(about)
+        headerButtons.appendChild(about)
 
-            const aboutLink = document.createElement('button')
-            about.appendChild(aboutLink)
-            aboutLink.textContent = 'About'
+            const aboutBtn = document.createElement('button')
+            about.appendChild(aboutBtn)
+            aboutBtn.textContent = 'About'
+
+            aboutBtn.addEventListener('click', function(e) {
+                if (e.target.classList.contains("active")) {
+                    setActiveButton(menuBtn)
+                    loadAbout();
+                }
+            })
 
 
-        const location = document.createElement('li')
-        headerLinks.appendChild(location)
+        const contact = document.createElement('li')
+        headerButtons.appendChild(contact)
 
-            const locationLink = document.createElement('button')
-            location.appendChild(locationLink)
-            locationLink.textContent = 'Location'
+            const contactBtn = document.createElement('button')
+            contact.appendChild(contactBtn)
+            contactBtn.textContent = 'Contact'
+
+            contactBtn.addEventListener('click', function(e) {
+                if (e.target.classList.contains("active")) {
+                    setActiveButton(menuBtn)
+                    loadContact();
+                }
+            })
+    return header;
 }
  
 
-createHeader();
+function createMain() {
+    const main = document.createElement('main')
+    main.classList.add('main')
+    main.id = 'main'
 
-function createMainContent() {
-    const mainContent = document.createElement('div')
-    mainContent.classList.add('main-content')
-    document.body.appendChild(mainContent)
-
-        // const krustyKrabImg = new Image();
-        // krustyKrabImg.src = Background;
-        // mainContent.appendChild(krustyKrabImg);
-
-        const homepageMsg = document.createElement('div')
-        homepageMsg.classList.add('mainMessage')
-        mainContent.appendChild(homepageMsg)
-
-            const welcomeTitle = document.createElement('p')
-            welcomeTitle.textContent = "Welcome to the Krusty Krab!"
-            homepageMsg.appendChild(welcomeTitle)
-
-            // const spongePic = new Image()
-            // spongePic.src = Spongebob;
-            // homepageMsg.appendChild(spongePic)
-
-
-            const welcomeMsg = document.createElement('p')
-            welcomeMsg.textContent = "Testing, testing"
-            homepageMsg.appendChild(welcomeMsg)
-
-    
+    return main;
 }
-
-createMainContent();
 
 
 function createFooter() {
     const footer = document.createElement('div')
     footer.classList.add('footer')
     footer.textContent = 'Copyright © Krusty Krab'
-    document.body.appendChild(footer)
 
+    return footer;
 }
 
-createFooter();
+function setActiveButton(button) {
+    const buttons = document.querySelectorAll(".header-buttons");
 
-// function aboutPage() {
-    
-// }
+    buttons.forEach((button) => {
+        if(button !== this) {
+            button.classList.remove("active");
+        }
+    });
+    button.classList.add("active")
+}
+
+function initializeWebsite() {
+    const container = document.createElement('div')
+    container.id = 'container'
+    document.body.appendChild(container)
+
+    container.appendChild(createHeader())
+    container.appendChild(createMain())
+    container.appendChild(createFooter())
+
+    setActiveButton(document.querySelector(".header-buttons"));
+    loadHome();
+}
+
+initializeWebsite()
