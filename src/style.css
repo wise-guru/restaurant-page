@@ -5,31 +5,37 @@
 
 body, #container {
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
     font-family: sans-serif;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #aa8d0a;
+    background-color: #c8b00f;
     background: url(./krusty-krab.webp);
     background-repeat: no-repeat; 
     /* font-family: SpongeFont; */
 
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 
 .header, .footer {
     color: white;
-    background-color: #aa8d0a;
+    background-color: #c8b00f;
     display: flex;
     justify-content: space-between;
-    padding: 32px;
+    padding: 28px;
     align-items: center;
     margin: 0;
+}
 
-
+.header-title {
+    margin-left: 32px;
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .header input {
@@ -54,10 +60,11 @@ ul {
 }
 
 .header button {
-    background-color:#aa8d0a;
+    background-color:#c8b00f;
     border: none;
     text-decoration: none;
     color: #fff;
+    font-size: 1rem;
 }
 
 .header button:hover {
@@ -70,17 +77,42 @@ ul {
 }
 
 .main-content {
-    display: grid;
-    /* background: url(./krusty-krab.webp); */
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    font-weight: 600;
     color: #fff;
+    display: grid;
+}
+
+.main-content.menu {
+    text-align: center;
+    justify-items: center;
+    font-weight: 600;
+}
+
+
+
+.main-content.page {
+    padding: 4rem;
+    margin: 6rem 0;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    justify-content: center;
+    justify-items: center;
+    gap: 8px;
+    text-align: center;
+
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 550;
+}
+
+.page img {
+    height: 20rem;
     width: auto;
 }
+
 
 .footer {
 
@@ -90,22 +122,31 @@ ul {
 .menu-cards img {
     height: auto;
     width: 150px;
+    border-radius: 4px;
 }
+
+
 
 .menu-cards {
     display: grid;
-    grid-column: 1;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));;
+    grid-template-columns: repeat(2, minmax(200px, 450px));;
     /* grid-template-rows: repeat(2, 1fr); */
     gap: 15px;
     margin: 15px;
+    justify-content: center;
+
 }
 
 .card {
     display: grid;
     background-color: #fff;
-    height: 200px;
-    align-items: end;
-    border-left: solid 8px #0f1c51;
+    height: 12rem;
+    justify-items: center;
+    border-left: solid 8px #4d3f04;
+    color: black;
+
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 

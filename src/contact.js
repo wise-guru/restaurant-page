@@ -2,9 +2,10 @@ import Patrick from './img/patrick.jpg'
 
 function showContact() {
     const contactContent = document.createElement('div')
-    contactContent.classList.add('main-content')
+    contactContent.classList.add('main-content', 'page')
 
         const contactTitle = document.createElement('div')
+        contactTitle.classList.add('main-title')
         contactTitle.textContent = "Contact Us"
         contactContent.appendChild(contactTitle)
 
@@ -13,7 +14,8 @@ function showContact() {
         contactContent.appendChild(contactImg)
 
         const contactNum = document.createElement('div')
-        contactNum.textContent = "123-456-7890"
+        contactNum.textContent = "1-800-IMREADY"
+        contactContent.appendChild(contactNum)
     
     return contactContent;
 }

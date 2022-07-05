@@ -29,6 +29,7 @@ function createHeader() {
         
 
     const title = document.createElement('div')
+    title.classList.add('header-title')
     title.textContent = "The Krusty Krab"
     header.appendChild(title)
 

@@ -11,6 +11,7 @@ function showMenu() {
    
 
     const menuTitle = document.createElement('div')
+    menuTitle.classList.add('main-title')
     menuTitle.textContent = "Menu"
     menuContent.appendChild(menuTitle)
 
@@ -42,7 +43,7 @@ function showMenu() {
     menuCards.appendChild(fries)
         const friesTitle = document.createElement('div')
         fries.appendChild(friesTitle)
-        friesTitle.textContent 
+        friesTitle.textContent = 'Kelp Fries'
 
         const friesPrice = document.createElement('div')
         friesPrice.textContent = "$2.99"
