@@ -54,7 +54,7 @@ function showMenu() {
         fries.appendChild(friesImg)
         
         const friesText = document.createElement('div')
-        fries.textContent 
+        friesText.textContent = ""
         fries.appendChild(friesText)
 
    const kelpShake = document.createElement('div')
@@ -73,7 +73,7 @@ function showMenu() {
         kelpShake.appendChild(kelpShakeImg)
         
         const kelpShakeText = document.createElement('div')
-        kelpShakeText.textContent = "Lorem ipsum"
+        kelpShakeText.textContent = "Mmm, kelp!"
         kelpShake.appendChild(kelpShakeText)
 
     const prettyPatty = document.createElement('div')
@@ -84,6 +84,7 @@ function showMenu() {
         prettyPattyTitle.textContent = "Pretty Patty"
 
         const prettyPattyPrice = document.createElement('div')
+        prettyPattyPrice.textContent = "$5.99"
         prettyPatty.appendChild(prettyPattyPrice)
 
         const prettyPattyImg = new Image()
@@ -91,7 +92,7 @@ function showMenu() {
         prettyPatty.appendChild(prettyPattyImg)
         
         const prettyPattyText = document.createElement('div')
-        prettyPattyText.textContent = "Lorem ipsum"
+        prettyPattyText.textContent = "The most colorful burgers around!"
         prettyPatty.appendChild(prettyPattyText)
     
     const pizza = document.createElement('div')
@@ -118,7 +119,7 @@ function showMenu() {
     menuCards.appendChild(chocolate)
         const chocolateTitle = document.createElement('div')
         chocolate.appendChild(chocolateTitle)
-        chocolateTitle.textContent = "CHOCOLATE!"
+        chocolateTitle.textContent = "Chocolate"
 
         const chocolatePrice = document.createElement('div')
         chocolate.appendChild(chocolatePrice)
@@ -128,7 +129,7 @@ function showMenu() {
         chocolate.appendChild(chocolateImg)
         
         const chocolateText = document.createElement('div')
-        chocolateText.textContent = "Delicious chocolate bar."
+        chocolateText.textContent = "CHOCOLATEEEEE!"
         chocolate.appendChild(chocolateText)
     
     return menuContent;
