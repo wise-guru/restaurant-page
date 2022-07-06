@@ -122,6 +122,7 @@ function showMenu() {
         chocolateTitle.textContent = "Chocolate"
 
         const chocolatePrice = document.createElement('div')
+        chocolatePrice.textContent = '$1'
         chocolate.appendChild(chocolatePrice)
 
         const chocolateImg = new Image()
