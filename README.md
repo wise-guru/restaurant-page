@@ -1,3 +1,3 @@
 # restaurant-page
 
-https://github.com/wise-guru/restaurant-page
+https://wise-guru.github.io/restaurant-page/
