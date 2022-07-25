@@ -52,7 +52,6 @@ function createHeader() {
                 
             })
 
-
         const about = document.createElement('li')
         headerButtons.appendChild(about)
 
